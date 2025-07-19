@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Crystal - Game Library</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="background-container">
+        <div class="blob color-1"></div>
+        <div class="blob color-2"></div>
+        <div class="blob color-3"></div>
+    </div>
+
+    <header class="main-header glass-panel">
+        <div class="logo">
+            <i class="fas fa-gem"></i>
+            <h1>Project Crystal</h1>
+        </div>
+        <nav class="console-nav">
+            <button class="console-btn active" data-console="home">Home</button>
+            <button class="console-btn" data-console="ps2">PlayStation 2</button>
+            <button class="console-btn" data-console="ps3">PlayStation 3</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home-section">
+            <div class="hero-layout glass-panel">
+                <div class="hero-image-placeholder">
+                    <i class="fas fa-image"></i>
+                    <span>Layout Gambar Iklan</span>
+                </div>
+                <div class="hero-text">
+                    <h2>Selamat Datang</h2>
+                    <p>Jelajahi koleksi game dalam antarmuka kaca yang memukau. Pilih konsol dari menu di atas untuk memulai petualangan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="games-section" class="hidden">
+            <div class="search-bar-container glass-panel">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Cari game...">
+            </div>
+
+            <div class="filter-controls-container glass-panel">
+                <div class="control-group">
+                    <label for="sort-select">Urutkan:</label>
+                    <select id="sort-select" class="custom-select">
+                        <option value="alpha-asc">Abjad (A-Z)</option>
+                        <option value="alpha-desc">Abjad (Z-A)</option>
+                        <option value="size-desc">Ukuran (Besar ke Kecil)</option>
+                        <option value="size-asc">Ukuran (Kecil ke Besar)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="region-select">Region:</label>
+                    <select id="region-select" class="custom-select">
+                        </select>
+                </div>
+                <button id="reset-filters-btn" class="reset-btn">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+            
+            <div id="game-grid" class="game-grid"></div>
+            <div id="loader" class="loader-container"></div>
+            <nav id="pagination" class="pagination-container"></nav>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="theme-switcher">
+            <span class="theme-dot" data-theme="dark" title="Crystal Dark"></span>
+            <span class="theme-dot" data-theme="light" title="Crystal Light"></span>
+        </div>
+        <p>&copy; 2025 Project Crystal. Desain oleh Gemini.</p>
+    </footer>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div id="modal-container" class="modal-container glass-panel">
+            <button id="modal-close-btn" class="modal-close-btn"><i class="fas fa-times"></i></button>
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
+</body>
+</html>
